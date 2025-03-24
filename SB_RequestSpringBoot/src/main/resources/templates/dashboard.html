@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#">Dashboard</a>
+            <button onclick="logout()">Đăng xuất</button>
+        </div>
+    </nav>
+
+    <div>
+        <h2>Chào mừng bạn đến với Dashboard!</h2>
+    </div>
+
+    <script>
+        function logout() {
+            alert("Bạn đã đăng xuất!");
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
