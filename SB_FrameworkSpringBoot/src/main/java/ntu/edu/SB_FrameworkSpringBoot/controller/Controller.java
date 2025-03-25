@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Controller {
 	@GetMapping("/")
 	public String trangChu() {
-		return "frontEndViews/index";
+		return "index";
 	}
 	
 	@GetMapping("/about")
 	public String gioiThieu() {
-		return "frontEndViews/about";
+		return "about";
 	}
 }
