@@ -14,12 +14,12 @@ public class WebController {
 	}
 	
 	@GetMapping("/")
-	public String list() {
+	public String danhSach() {
 		return "studentlist";
 	}
 	
 	@GetMapping("/about")
-	public String addNew() {
+	public String themMoi() {
 		return "addnew";
 	}
 }

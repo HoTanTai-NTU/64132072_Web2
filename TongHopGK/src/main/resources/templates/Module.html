@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .dauTrang {
+            background: url('/static/images/header.jpg') no-repeat center center;
+            background-size: cover;
+            height: 200px;
+        }
+        .hinhBen {
+            background: url('/static/images/sidebar.jpg') no-repeat center center;
+            background-size: cover;
+            width: 30%;
+            height: 200px;
+        }
+        .chanTrang {
+        	text-align: center;
+            padding: 15px;
+            background: #f4f4f4;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: #f4f4f4;
+        }
+        .menu a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+        }
+        .menu a:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div th:fragment="dauTrang" class="dauTrang"></div>
+
+<div th:fragment="danhMuc">
+    <nav class="menu">
+        <a th:href="@{/home.html}">Home</a>
+        <a th:href="@{/about.html}">About</a>
+        <a th:href="@{/studentlist.html}">List</a>
+        <a th:href="@{/addnew.html}">Add New</a>
+    </nav>
+</div>
+
+<div th:fragment="hinhBen" class="hinhBen"></div>
+
+<div th:fragment="chanTrang">
+    <p>© Copyrighted by Hồ Tấn Tài</p>
+</div>
+
+</body>
+</html>
