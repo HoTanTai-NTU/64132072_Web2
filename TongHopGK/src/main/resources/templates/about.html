@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>About me</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        padding: 40px;
+        text-align: center;
+        color: #333;
+    }
+    .content h2 {
+        color: #000;
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+</style>
 </head>
 <body>
-
+    <table>
+        <tr height="100px">
+            <td colspan="2"> 
+                <div th:replace="Module::dauTrang"></div>  
+            </td>
+        </tr>
+        <tr height="80px">
+        	<td colspan="2">
+        		<div th:replace="Module::danhMuc"></div>
+        	</td>
+        </tr>
+        <tr height="450px">
+            <td width="800px" class="content"> 
+                <h2>Thông tin sinh viên:</h2>
+                <p>Họ tên: Hồ Tấn Tài</p>
+                <p>MSSV: 64132072</p>
+                <p>Lớp: 64.CNTT-CLC</p>
+            </td> 
+            <td class="hinhBen"> 
+                <div th:replace="Module::hinhBen"></div>  
+            </td>
+        </tr>
+        <tr height="70px">
+			<td colspan="2"> 
+				<div th:replace="Module::chanTrang"></div>  
+			</td>  
+		</tr>
+    </table>
 </body>
 </html>

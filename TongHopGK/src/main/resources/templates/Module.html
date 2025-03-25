@@ -5,38 +5,38 @@
     <title></title>
     <style>
         .dauTrang {
-            background: url('/static/images/header.jpg') no-repeat center center;
+            background: url('/TongHopGK/src/main/resources/templates/images/header.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px;
         }
         .hinhBen {
-            background: url('/static/images/sidebar.jpg') no-repeat center center;
+            background: url('/TongHopGK/src/main/resources/templates/images/sidebar.jpg') no-repeat center center;
             background-size: cover;
             width: 30%;
-            height: 200px;
+            height: 100%;
         }
         .chanTrang {
-        	text-align: center;
+            text-align: center;
             padding: 15px;
             background: #f4f4f4;
         }
         .menu {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 15px 0;
             background: #f4f4f4;
         }
         .menu a {
-            flex: 1;
-            text-align: center;
             text-decoration: none;
             font-weight: bold;
-            color: #333;
-            padding: 10px;
+            color: black;
+            padding: 10px 20px;
+            transition: 0.3s;
         }
         .menu a:hover {
-            background: #fff;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -46,10 +46,10 @@
 
 <div th:fragment="danhMuc">
     <nav class="menu">
-        <a th:href="@{/home.html}">Home</a>
-        <a th:href="@{/about.html}">About</a>
-        <a th:href="@{/studentlist.html}">List</a>
-        <a th:href="@{/addnew.html}">Add new</a>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/studentlist}">List</a>
+        <a th:href="@{/add}">Add New</a>
     </nav>
 </div>
 
