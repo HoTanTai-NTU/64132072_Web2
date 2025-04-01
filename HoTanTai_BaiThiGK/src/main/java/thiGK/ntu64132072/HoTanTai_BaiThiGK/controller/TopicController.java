@@ -12,12 +12,16 @@ import thiGK.ntu64132072.HoTanTai_BaiThiGK.model.Topic;
 
 @Controller
 	@RequestMapping("/dashboard")
-	public class WebController {
+	public class TopicController {
 	private ArrayList<Topic> topics = new ArrayList<>(Arrays.asList(
 		    new Topic(1, "Trang chủ", "Trang chính của hệ thống", 101, "Web", "/topic/view/1", "/topic/edit/1", "/topic/delete/1"),
 		    new Topic(2, "Giới thiệu", "Thông tin giới thiệu", 102, "Thuyết trình", "/topic/view/2", "/topic/edit/2", "/topic/delete/2"),
 		    new Topic(3, "Liên hệ", "Trang liên hệ", 103, "Web", "/topic/view/3", "/topic/edit/3", "/topic/delete/3")
 		));
+	@GetMapping("/dashboard")
+	public String dashboard() {
+		return "home";
+	}
 	@GetMapping("/topic/all")
     public String listTopics(ModelMap model) {
         model.addAttribute("topics", topics);
