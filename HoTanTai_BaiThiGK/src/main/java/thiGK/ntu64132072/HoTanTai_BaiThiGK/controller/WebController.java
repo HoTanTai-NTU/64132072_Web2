@@ -9,5 +9,20 @@ public class WebController {
 	public String trangChu() {
 		return "home";
 	}
-	
+	@GetMapping("/dashboard")
+	public String dsTopic() {
+		return "topiclist";
+	}
+	@GetMapping("/dashboard")
+	public String themTopic() {
+		return "addtopic";
+	}
+	@GetMapping("/dashboard")
+	public String viewTopic() {
+		return "viewtopic";
+	}
+	@GetMapping("/dashboard")
+	public String xoaTopic() {
+		return "deletetopic";
+	}
 }
