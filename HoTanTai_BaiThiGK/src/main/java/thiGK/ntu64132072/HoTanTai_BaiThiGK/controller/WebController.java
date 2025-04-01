@@ -14,9 +14,9 @@ import thiGK.ntu64132072.HoTanTai_BaiThiGK.model.Topic;
 	@RequestMapping("/dashboard")
 	public class WebController {
 	private ArrayList<Topic> topics = new ArrayList<>(Arrays.asList(
-		    new Topic(1, "Trang chủ", "Trang chính của hệ thống", 101, "Web"),
-		    new Topic(2, "Giới thiệu", "Thông tin giới thiệu", 102, "Thuyết trình"),
-		    new Topic(3, "Liên hệ", "Trang liên hệ", 103, "Web")
+		    new Topic(1, "Trang chủ", "Trang chính của hệ thống", 101, "Web", "/topic/view/1", "/topic/edit/1", "/topic/delete/1"),
+		    new Topic(2, "Giới thiệu", "Thông tin giới thiệu", 102, "Thuyết trình", "/topic/view/2", "/topic/edit/2", "/topic/delete/2"),
+		    new Topic(3, "Liên hệ", "Trang liên hệ", 103, "Web", "/topic/view/3", "/topic/edit/3", "/topic/delete/3")
 		));
 	@GetMapping("/topic/all")
     public String listTopics(ModelMap model) {
@@ -36,8 +36,11 @@ import thiGK.ntu64132072.HoTanTai_BaiThiGK.model.Topic;
             @RequestParam("supervisorId") int supervisorId,
             @RequestParam("topicType") String topicType, 
             ModelMap model) {
-    	topics.add(new Topic(id, topicName, topicDescription, supervisorId, topicType));
+    	String viewUrl = "/topic/view/" + id;
+        String editUrl = "/topic/edit/" + id;
+        String deleteUrl = "/topic/delete/" + id;
+    	topics.add(new Topic(id, topicName, topicDescription, supervisorId, topicType, viewUrl, editUrl, deleteUrl));
     	model.addAttribute("topics", topics);
-    	return "list";
+    	return "topiclist";
     }
 }
