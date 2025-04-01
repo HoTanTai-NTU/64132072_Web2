@@ -5,12 +5,10 @@
     <title></title>
     <style>
         .dauTrang {
-            background: url('/TongHopGK/src/main/resources/templates/images/header.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px;
         }
         .hinhBen {
-            background: url('/TongHopGK/src/main/resources/templates/images/sidebar.jpg') no-repeat center center;
             background-size: cover;
             width: 30%;
             height: 100%;
@@ -42,17 +40,17 @@
 
 <div th:fragment="danhMuc">
     <nav class="menu">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/about}">About</a>
-        <a th:href="@{/studentlist}">List</a>
-        <a th:href="@{/add}">Add New</a>
+        <a th:href="@{/about}">Topic -List</a>
+        <a th:href="@{/studentlist}">Topic -Addnew</a>
+        <a th:href="@{/add}">Student - List</a>
+        <a th:href="@{/add}">Student - Addnew</a>
     </nav>
 </div>
 
 <div th:fragment="hinhBen" class="hinhBen"></div>
 
 <div th:fragment="chanTrang">
-    <p>© Copyrighted by Hồ Tấn Tài</p>
+    <p>2025 by Hồ Tấn Tài - FIT.NTU</p>
 </div>
 
 </body>
