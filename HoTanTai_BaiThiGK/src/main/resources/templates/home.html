@@ -26,6 +26,9 @@
             padding: 0 20px;
             font-size: 18px;
         }
+        .header-logo img {
+            height: 40px;
+        }
         .sidebar {
             background-color: #eef1f5;
             padding: 20px;
@@ -36,6 +39,17 @@
             text-decoration: none;
             margin-bottom: 10px;
             font-weight: bold;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+        }
+        .sidebar a:hover {
+            background-color: #e0e0e0;
+        }
+        .sidebar a:first-child {
+            font-weight: 900; /* Make "Dashboard" extra bold */
         }
         .content {
             padding: 30px;
@@ -52,18 +66,20 @@
 <body>
 <div class="container">
     <div class="header">
-        <div>FIT.NTU - Dashboard</div>
-        <div>[UserName]</div>
+        <div class="header-logo">
+            <img src="https://khoacntt.ntu.edu.vn/Portals/54/Logo-Khoa-CNTT-NTU.png?ver=w1WaDt4_a6t2zoyh_JwxVA%3D%3D" alt="FIT.NTU Logo">
+        </div>
+        <div>[Hồ Tấn Tài]</div>
     </div>
     <div class="sidebar">
+        <a th:href="@{/dashboard}">Dashboard</a>
         <a th:href="@{/dashboard/topic/all}">Topic - List</a>
         <a th:href="@{/dashboard/topic/new}">Topic - Addnew</a>
         <a th:href="@{/student/list}">Student - List</a>
-        <a th:href="@{/student/new}">Student - Addnew</a>
+        <a th:href="@{/student/new}">Student -Addnew</a>
     </div>
     <div class="content">
-        <h2>Xin chào, đây là trang dashboard.</h2>
-        <p>Chọn một mục từ menu bên trái để bắt đầu.</p>
+        <h2>Content</h2>
     </div>
     <div class="footer">
         ©2025 by Student Name – FIT.NTU
