@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website bán hàng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-8 mx-auto rounded border p-4 m-4">
+    			<h2 class="text-center mb-5">Thêm sản phẩm</h2>
+    			<form method="post" enctype="multipart/form-data" th:object="${productDTO}">
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Tên</label>
+    					<div class="col-sm-8">
+    						<input class="form-control" th:field="${productDTO.name}">
+    						<p th:if="${#fields.hasErrors('name')}" th:errorclass="text-danger" th:errors="${productDTO.name}"></p>
+    					</div>
+    				</div>
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Nhãn hàng</label>
+    					<div class="col-sm-8">
+    						<input class="form-control" th:field="${productDTO.brand}">
+    						<p th:if="${#fields.hasErrors('brand')}" th:errorclass="text-danger" th:errors="${productDTO.brand}"></p>
+    					</div>
+    				</div>
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Thể loại</label>
+    					<div class "col-sm-8">
+    						<select class="form-select" th:field="${productDTO.category}">
+    							<option value="" disabled selected>-- Chọn thể loại --</option>
+    							<option value="Điện thoại">Điện thoại</option>
+    							<option value="Laptop">Laptop</option>
+    							<option value="Phụ kiện">Phụ kiện</option>
+    							<option value="Máy ảnh">Máy ảnh</option>
+    							<option value="Máy tính bảng">Máy tính bảng</option>
+    							<option value="Màn hình">Màn hình</option>
+    							<option value="Máy chơi game">Máy chơi game</option>
+    							<option value="Máy đọc sách">Máy đọc sách</option>
+    							<option value="Flycam">Flycam</option>
+    							<option value="Khác">Khác</option>
+    						</select>
+    						<p th:if="${#fields.hasErrors('category')}" th:errorclass="text-danger" th:errors="${productDTO.category}"></p>
+    					</div>
+    				</div>
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Giá</label>
+    					<div class="col-sm-8">
+    						<input class="form-control" type="number" step="1000" min="0" th:field="${productDTO.price}">
+    						<p th:if="${#fields.hasErrors('price')}" th:errorclass="text-danger" th:errors="${productDTO.price}"></p>
+    					</div>
+    				</div>
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Mô tả</label>
+    					<div class="col-sm-8">
+    						<textarea class="form-control" th:field="${productDTO.description}"></textarea>
+    						<p th:if="${#fields.hasErrors('description')}" th:errorclass="text-danger" th:errors="${productDTO.description}"></p>
+    					</div>
+    				</div>
+    				<div class="row mb-3">
+    					<label class="col-sm-4 col-form-label">Ảnh</label>
+    					<div class="col-sm-8">
+    						<input class="form-control" type="file" th:field="${productDTO.imageFile}">
+    						<p th:if="${#fields.hasErrors('imageFile')}" th:errorclass="text-danger" th:errors="${productDTO.imageField}"></p>
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div class="offset-sm-4 col-sm-4 d-grid">
+    						<button type="submit" class="btn btn-primary">Thêm</button>
+    					</div>
+    					<div class="col-sm-4 d-grid">
+    						<a class="btn btn-outline-priamry" href="/products" role="button">Hủy</a>
+    					</div>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
+</html>
